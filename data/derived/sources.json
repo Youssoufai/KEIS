@@ -1,0 +1,298 @@
+{
+ "builtAt": "2026-11-17T15:53:28.534Z",
+ "sources": {
+  "lgas": {
+   "title": "LGA boundaries",
+   "provider": "GRID3 Nigeria (source: WHO/eHealth Africa)",
+   "kind": "arcgis",
+   "url": "https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/NGA_LGA_Boundaries_2/FeatureServer/0",
+   "where": "statename='Kogi' AND lganame IN ('Ankpa','Dekina','Adavi')",
+   "licence": "CC BY 4.0",
+   "publicUse": true,
+   "evidence": "official",
+   "datasetDate": "2019",
+   "limitations": [
+    "Operational boundaries for vaccination planning; not a gazetted legal boundary.",
+    "Edges do not align exactly with the GRID3 v4.0 ward boundaries (see validation report)."
+   ],
+   "retrievedAt": "2026-11-17T14:52:01.546Z",
+   "recordsInWindow": 3
+  },
+  "wards": {
+   "title": "Operational ward boundaries v4.0",
+   "provider": "GRID3 Nigeria",
+   "kind": "arcgis",
+   "url": "https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/GRID3_NGA_operational_wards_v4_0/FeatureServer/0",
+   "where": "state='Kogi' AND lga IN ('Ankpa','Dekina','Adavi')",
+   "licence": "Open with attribution (GRID3 terms)",
+   "publicUse": true,
+   "evidence": "official",
+   "datasetDate": "2026-10-16",
+   "limitations": [
+    "Operational wards; names may differ from INEC registration-area names."
+   ],
+   "retrievedAt": "2026-11-17T14:52:03.870Z",
+   "recordsInWindow": 36
+  },
+  "settlementBlocks": {
+   "title": "Settlement extents v4.1 (block level)",
+   "provider": "GRID3 Nigeria",
+   "kind": "arcgis",
+   "url": "https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/GRID3_NGA_settlement_extents_v4_1/FeatureServer/0",
+   "spatial": true,
+   "outFields": [
+    "block_id",
+    "building_count",
+    "building_area_sum",
+    "block_area_sqm",
+    "block_neighbor_count",
+    "extent_type",
+    "mgrs_code",
+    "blocks_per_settl_extent"
+   ],
+   "licence": "Open with attribution (GRID3 terms; confirm exact licence)",
+   "publicUse": true,
+   "evidence": "modelled",
+   "datasetDate": "2025 (v4.1)",
+   "limitations": [
+    "Rows are settlement BLOCKS, not settlements; blocks are aggregated into settlement extents by build.mjs.",
+    "Derived from building-footprint models; small or new settlements may be missing.",
+    "No settlement names; names come only from GRID3 named settlement points."
+   ],
+   "retrievedAt": "2026-11-17T14:52:06.112Z",
+   "recordsInWindow": 21109
+  },
+  "settlementPoints": {
+   "title": "Named settlement points",
+   "provider": "GRID3 Nigeria",
+   "kind": "arcgis",
+   "url": "https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/Settlements_in_Nigeria/FeatureServer/0",
+   "spatial": true,
+   "licence": "CC BY 4.0",
+   "publicUse": true,
+   "evidence": "reported",
+   "datasetDate": "2018 (field collection)",
+   "limitations": [
+    "Sparse in Adavi LGA.",
+    "Names as recorded in 2018; spelling not field-verified."
+   ],
+   "retrievedAt": "2026-11-17T14:52:27.323Z",
+   "recordsInWindow": 1754
+  },
+  "healthFacilities": {
+   "title": "Health facilities v4.0",
+   "provider": "GRID3 Nigeria",
+   "kind": "arcgis",
+   "url": "https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/GRID3_NGA_Health_Facilities_v4_0/FeatureServer/0",
+   "spatial": true,
+   "outFields": [
+    "facility_name",
+    "facility_level",
+    "facility_type",
+    "facility_ownership",
+    "functional",
+    "ward_standard",
+    "lga_standard"
+   ],
+   "licence": "Open with attribution (GRID3 terms)",
+   "publicUse": true,
+   "evidence": "reported",
+   "datasetDate": "2026",
+   "limitations": [
+    "'functional' flag is reported, not field-verified.",
+    "Electricity status of facilities is not recorded."
+   ],
+   "retrievedAt": "2026-11-17T14:52:28.818Z",
+   "recordsInWindow": 1096
+  },
+  "schools": {
+   "title": "Schools",
+   "provider": "GRID3 Nigeria",
+   "kind": "arcgis",
+   "url": "https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/Schools_in_Nigeria/FeatureServer/0",
+   "spatial": true,
+   "outFields": [
+    "name",
+    "education",
+    "management",
+    "category",
+    "subtype",
+    "lganame",
+    "wardname"
+   ],
+   "licence": "CC BY 4.0",
+   "publicUse": true,
+   "evidence": "reported",
+   "datasetDate": "2018–2019",
+   "limitations": [
+    "Older dataset; closures and new schools since collection are not reflected."
+   ],
+   "retrievedAt": "2026-11-17T14:52:29.778Z",
+   "recordsInWindow": 1285
+  },
+  "markets": {
+   "title": "Markets",
+   "provider": "GRID3 Nigeria",
+   "kind": "arcgis",
+   "url": "https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/Markets_in_Nigeria/FeatureServer/0",
+   "spatial": true,
+   "outFields": [
+    "market_nam",
+    "mrkt_type",
+    "mrkt_frqcy",
+    "lganame",
+    "wardname"
+   ],
+   "licence": "CC BY 4.0",
+   "publicUse": true,
+   "evidence": "reported",
+   "datasetDate": "2018–2019",
+   "limitations": [
+    "Very few markets recorded in the pilot area; absence is not evidence of no market."
+   ],
+   "retrievedAt": "2026-11-17T14:52:30.707Z",
+   "recordsInWindow": 31
+  },
+  "roads": {
+   "title": "Roads (trunk to tertiary)",
+   "provider": "GRID3 Nigeria (built from Overture/OSM and Meta data)",
+   "kind": "arcgis",
+   "url": "https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/GRID3_NGA_roads/FeatureServer/0",
+   "spatial": true,
+   "where": "class IN ('motorway','trunk','primary','secondary','tertiary')",
+   "outFields": [
+    "class",
+    "names",
+    "road_surface"
+   ],
+   "licence": "Open with attribution (GRID3 terms; underlying ODbL for OSM-derived segments)",
+   "publicUse": true,
+   "evidence": "mapped",
+   "datasetDate": "2025",
+   "limitations": [
+    "Only trunk–tertiary classes are fetched; residential roads and tracks are excluded.",
+    "Road condition is not recorded."
+   ],
+   "retrievedAt": "2026-11-17T14:52:31.358Z",
+   "recordsInWindow": 3585
+  },
+  "mvLines": {
+   "title": "33 kV / 11 kV distribution lines",
+   "provider": "Nigeria SE4ALL platform (REA)",
+   "kind": "wfs",
+   "url": "https://data.nigeriase4all.gov.ng/geoserver/ows",
+   "typeName": "se4allWS:distribution_line_all_no_modell_mv",
+   "licence": "Not stated",
+   "publicUse": false,
+   "evidence": "reported",
+   "datasetDate": "Unknown (platform data, retrieved live)",
+   "limitations": [
+    "Licence not stated: internal use only until SE4ALL/REA confirms permission.",
+    "Utility-reported network; completeness and energisation are unknown.",
+    "A line nearby does NOT mean a settlement is connected; no line nearby does NOT mean it is unelectrified."
+   ],
+   "retrievedAt": "2026-11-17T14:52:41.543Z",
+   "recordsInWindow": 677
+  },
+  "hvLines": {
+   "title": "High-voltage transmission lines",
+   "provider": "Nigeria SE4ALL platform (REA)",
+   "kind": "wfs",
+   "url": "https://data.nigeriase4all.gov.ng/geoserver/ows",
+   "typeName": "geonode:existing_lines_high_voltage",
+   "licence": "Not stated",
+   "publicUse": false,
+   "evidence": "reported",
+   "datasetDate": "Unknown (platform data, retrieved live)",
+   "limitations": [
+    "Licence not stated: internal use only.",
+    "Transmission lines do not supply settlements directly."
+   ],
+   "retrievedAt": "2026-11-17T14:52:44.970Z",
+   "recordsInWindow": 20
+  },
+  "substations": {
+   "title": "Substations",
+   "provider": "Nigeria SE4ALL platform (REA)",
+   "kind": "wfs",
+   "url": "https://data.nigeriase4all.gov.ng/geoserver/ows",
+   "typeName": "geonode:substations_currently_installed",
+   "licence": "Not stated",
+   "publicUse": false,
+   "evidence": "reported",
+   "datasetDate": "Unknown (platform data, retrieved live)",
+   "limitations": [
+    "Licence not stated: internal use only."
+   ],
+   "retrievedAt": "2026-11-17T14:52:45.765Z",
+   "recordsInWindow": 20
+  },
+  "minigrids": {
+   "title": "Mini-grids",
+   "provider": "Nigeria SE4ALL platform (REA)",
+   "kind": "wfs",
+   "url": "https://data.nigeriase4all.gov.ng/geoserver/ows",
+   "typeName": "se4allWS:minigrids",
+   "licence": "Not stated",
+   "publicUse": false,
+   "evidence": "reported",
+   "datasetDate": "Unknown (platform data, retrieved live)",
+   "limitations": [
+    "Licence not stated: internal use only.",
+    "Operational status as reported; may be outdated."
+   ],
+   "retrievedAt": "2026-11-17T14:52:46.027Z",
+   "recordsInWindow": 2
+  },
+  "osmPower": {
+   "title": "Power lines and substations (OpenStreetMap)",
+   "provider": "OpenStreetMap contributors",
+   "kind": "overpass",
+   "url": "https://overpass-api.de/api/interpreter",
+   "licence": "ODbL 1.0",
+   "publicUse": true,
+   "evidence": "mapped",
+   "datasetDate": "Retrieved live",
+   "limitations": [
+    "Crowd-mapped; coverage of 11/33 kV lines is sparse.",
+    "Requires '© OpenStreetMap contributors' attribution."
+   ],
+   "retrievedAt": "2026-11-17T14:52:46.331Z",
+   "recordsInWindow": 43
+  },
+  "population": {
+   "title": "WorldPop constrained population 2026 (100 m)",
+   "provider": "WorldPop, University of Southampton (R2025A)",
+   "kind": "raster",
+   "fullDownload": true,
+   "url": "https://data.worldpop.org/GIS/Population/Global_2015_2030/R2025A/2026/NGA/v1/100m/constrained/nga_pop_2026_CN_100m_R2025A_v1.tif",
+   "licence": "CC BY 4.0",
+   "publicUse": true,
+   "evidence": "modelled",
+   "datasetDate": "2026 projection (R2025A release)",
+   "limitations": [
+    "Modelled estimate, not a census count.",
+    "100 m cells are assigned to a settlement by cell centre; edge cells may fall to neighbours."
+   ],
+   "retrievedAt": "2026-11-17T15:52:30.483Z",
+   "recordsInWindow": 1640881
+  },
+  "electrification": {
+   "title": "HREA probability of electrification (set_prplit) 2020",
+   "provider": "University of Michigan HREA v1.1 (from VIIRS night lights)",
+   "kind": "raster",
+   "url": "https://globalnightlight.s3.amazonaws.com/HREAv1.1_COGs/NGA/NGA/set_prplit/NGA_set_prplit_2020.tif",
+   "licence": "Free with citation",
+   "publicUse": true,
+   "evidence": "modelled",
+   "datasetDate": "2020",
+   "limitations": [
+    "Modelled likelihood that a settlement is lit at night, as of 2020.",
+    "Low values do NOT prove a settlement has no electricity (small loads, solar home systems and intermittent supply are often invisible).",
+    "Cells with no value are reported as unknown, not as zero."
+   ],
+   "retrievedAt": "2026-11-17T15:29:24.624Z",
+   "recordsInWindow": 14750641
+  }
+ }
+}

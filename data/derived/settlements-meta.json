@@ -1,0 +1,475 @@
+{
+ "builtAt": "2026-11-17T15:53:28.534Z",
+ "unit": "GRID3 settlement extent (v4.1 blocks merged by mgrs_code)",
+ "indicators": {
+  "buildings": {
+   "label": "Buildings",
+   "unit": "count",
+   "evidence": "modelled",
+   "publicUse": true,
+   "source": "Settlement extents v4.1 (block level)",
+   "provider": "GRID3 Nigeria",
+   "datasetDate": "2025 (v4.1)",
+   "retrievedAt": "2026-11-17T14:52:06.112Z",
+   "licence": "Open with attribution (GRID3 terms; confirm exact licence)",
+   "method": "Sum of building_count over the settlement's blocks.",
+   "limitations": [
+    "Rows are settlement BLOCKS, not settlements; blocks are aggregated into settlement extents by build.mjs.",
+    "Derived from building-footprint models; small or new settlements may be missing.",
+    "No settlement names; names come only from GRID3 named settlement points."
+   ]
+  },
+  "builtAreaM2": {
+   "label": "Built-up roof area",
+   "unit": "m²",
+   "evidence": "modelled",
+   "publicUse": true,
+   "source": "Settlement extents v4.1 (block level)",
+   "provider": "GRID3 Nigeria",
+   "datasetDate": "2025 (v4.1)",
+   "retrievedAt": "2026-11-17T14:52:06.112Z",
+   "licence": "Open with attribution (GRID3 terms; confirm exact licence)",
+   "method": "Sum of building_area_sum over blocks.",
+   "limitations": [
+    "Rows are settlement BLOCKS, not settlements; blocks are aggregated into settlement extents by build.mjs.",
+    "Derived from building-footprint models; small or new settlements may be missing.",
+    "No settlement names; names come only from GRID3 named settlement points."
+   ]
+  },
+  "areaHa": {
+   "label": "Settlement extent area",
+   "unit": "ha",
+   "evidence": "modelled",
+   "publicUse": true,
+   "source": "Settlement extents v4.1 (block level)",
+   "provider": "GRID3 Nigeria",
+   "datasetDate": "2025 (v4.1)",
+   "retrievedAt": "2026-11-17T14:52:06.112Z",
+   "licence": "Open with attribution (GRID3 terms; confirm exact licence)",
+   "method": "Geodesic area of the merged block polygons.",
+   "limitations": []
+  },
+  "pop": {
+   "label": "Population (2026 estimate)",
+   "unit": "people",
+   "evidence": "modelled",
+   "publicUse": true,
+   "source": "WorldPop constrained population 2026 (100 m)",
+   "provider": "WorldPop, University of Southampton (R2025A)",
+   "datasetDate": "2026 projection (R2025A release)",
+   "retrievedAt": "2026-11-17T15:52:30.483Z",
+   "licence": "CC BY 4.0",
+   "method": "Sum of WorldPop 100 m cells whose centre lies inside the settlement extent.",
+   "limitations": [
+    "Modelled estimate, not a census count.",
+    "100 m cells are assigned to a settlement by cell centre; edge cells may fall to neighbours.",
+    "Hamlets smaller than one cell may show 0."
+   ]
+  },
+  "hrea": {
+   "label": "Night-light electrification likelihood (2020)",
+   "unit": "0–1",
+   "evidence": "modelled",
+   "publicUse": true,
+   "source": "HREA probability of electrification (set_prplit) 2020",
+   "provider": "University of Michigan HREA v1.1 (from VIIRS night lights)",
+   "datasetDate": "2020",
+   "retrievedAt": "2026-11-17T15:29:24.624Z",
+   "licence": "Free with citation",
+   "method": "Mean of valid HREA set_prplit cells inside the extent; else the cell at the representative point; else Unknown.",
+   "limitations": [
+    "Modelled likelihood that a settlement is lit at night, as of 2020.",
+    "Low values do NOT prove a settlement has no electricity (small loads, solar home systems and intermittent supply are often invisible).",
+    "Cells with no value are reported as unknown, not as zero."
+   ]
+  },
+  "dHealth": {
+   "label": "Distance to nearest health facility",
+   "unit": "km",
+   "evidence": "reported",
+   "publicUse": true,
+   "source": "Health facilities v4.0",
+   "provider": "GRID3 Nigeria",
+   "datasetDate": "2026",
+   "retrievedAt": "2026-11-17T14:52:28.818Z",
+   "licence": "Open with attribution (GRID3 terms)",
+   "method": "Planar distance (km) from the settlement's representative point to the nearest feature inside the three LGAs plus a 10 km buffer.",
+   "limitations": [
+    "'functional' flag is reported, not field-verified.",
+    "Electricity status of facilities is not recorded."
+   ]
+  },
+  "nHealth2km": {
+   "label": "Health facilities within 2 km",
+   "unit": "count",
+   "evidence": "reported",
+   "publicUse": true,
+   "source": "Health facilities v4.0",
+   "provider": "GRID3 Nigeria",
+   "datasetDate": "2026",
+   "retrievedAt": "2026-11-17T14:52:28.818Z",
+   "licence": "Open with attribution (GRID3 terms)",
+   "method": "Count within 2 km of the representative point.",
+   "limitations": [
+    "'functional' flag is reported, not field-verified.",
+    "Electricity status of facilities is not recorded."
+   ]
+  },
+  "dSchool": {
+   "label": "Distance to nearest school",
+   "unit": "km",
+   "evidence": "reported",
+   "publicUse": true,
+   "source": "Schools",
+   "provider": "GRID3 Nigeria",
+   "datasetDate": "2018–2019",
+   "retrievedAt": "2026-11-17T14:52:29.778Z",
+   "licence": "CC BY 4.0",
+   "method": "Planar distance (km) from the settlement's representative point to the nearest feature inside the three LGAs plus a 10 km buffer.",
+   "limitations": [
+    "Older dataset; closures and new schools since collection are not reflected."
+   ]
+  },
+  "nSchool2km": {
+   "label": "Schools within 2 km",
+   "unit": "count",
+   "evidence": "reported",
+   "publicUse": true,
+   "source": "Schools",
+   "provider": "GRID3 Nigeria",
+   "datasetDate": "2018–2019",
+   "retrievedAt": "2026-11-17T14:52:29.778Z",
+   "licence": "CC BY 4.0",
+   "method": "Count within 2 km of the representative point.",
+   "limitations": [
+    "Older dataset; closures and new schools since collection are not reflected."
+   ]
+  },
+  "dMarket": {
+   "label": "Distance to nearest recorded market",
+   "unit": "km",
+   "evidence": "reported",
+   "publicUse": true,
+   "source": "Markets",
+   "provider": "GRID3 Nigeria",
+   "datasetDate": "2018–2019",
+   "retrievedAt": "2026-11-17T14:52:30.707Z",
+   "licence": "CC BY 4.0",
+   "method": "Planar distance (km) from the settlement's representative point to the nearest feature inside the three LGAs plus a 10 km buffer.",
+   "limitations": [
+    "Very few markets recorded in the pilot area; absence is not evidence of no market."
+   ]
+  },
+  "dRoad": {
+   "label": "Distance to nearest trunk–tertiary road",
+   "unit": "km",
+   "evidence": "mapped",
+   "publicUse": true,
+   "source": "Roads (trunk to tertiary)",
+   "provider": "GRID3 Nigeria (built from Overture/OSM and Meta data)",
+   "datasetDate": "2025",
+   "retrievedAt": "2026-11-17T14:52:31.358Z",
+   "licence": "Open with attribution (GRID3 terms; underlying ODbL for OSM-derived segments)",
+   "method": "Planar distance (km) from the settlement's representative point to the nearest feature inside the three LGAs plus a 10 km buffer.",
+   "limitations": [
+    "Only trunk–tertiary classes are fetched; residential roads and tracks are excluded.",
+    "Road condition is not recorded."
+   ]
+  },
+  "dMv": {
+   "label": "Distance to nearest mapped 33/11 kV line",
+   "unit": "km",
+   "evidence": "reported",
+   "publicUse": false,
+   "source": "33 kV / 11 kV distribution lines",
+   "provider": "Nigeria SE4ALL platform (REA)",
+   "datasetDate": "Unknown (platform data, retrieved live)",
+   "retrievedAt": "2026-11-17T14:52:41.543Z",
+   "licence": "Not stated",
+   "method": "Planar distance (km) from the settlement's representative point to the nearest feature inside the three LGAs plus a 10 km buffer. SE4ALL MV lines plus OSM lines tagged below 66 kV.",
+   "limitations": [
+    "Licence not stated: internal use only until SE4ALL/REA confirms permission.",
+    "Utility-reported network; completeness and energisation are unknown.",
+    "A line nearby does NOT mean a settlement is connected; no line nearby does NOT mean it is unelectrified."
+   ]
+  },
+  "dHv": {
+   "label": "Distance to nearest mapped HV line",
+   "unit": "km",
+   "evidence": "reported",
+   "publicUse": false,
+   "source": "High-voltage transmission lines",
+   "provider": "Nigeria SE4ALL platform (REA)",
+   "datasetDate": "Unknown (platform data, retrieved live)",
+   "retrievedAt": "2026-11-17T14:52:44.970Z",
+   "licence": "Not stated",
+   "method": "Planar distance (km) from the settlement's representative point to the nearest feature inside the three LGAs plus a 10 km buffer. SE4ALL HV lines plus OSM lines tagged ≥ 66 kV.",
+   "limitations": [
+    "Licence not stated: internal use only.",
+    "Transmission lines do not supply settlements directly."
+   ]
+  },
+  "dSub": {
+   "label": "Distance to nearest mapped substation",
+   "unit": "km",
+   "evidence": "reported",
+   "publicUse": false,
+   "source": "Substations",
+   "provider": "Nigeria SE4ALL platform (REA)",
+   "datasetDate": "Unknown (platform data, retrieved live)",
+   "retrievedAt": "2026-11-17T14:52:45.765Z",
+   "licence": "Not stated",
+   "method": "Planar distance (km) from the settlement's representative point to the nearest feature inside the three LGAs plus a 10 km buffer. SE4ALL plus OSM substations.",
+   "limitations": [
+    "Licence not stated: internal use only."
+   ]
+  },
+  "dMg": {
+   "label": "Distance to nearest recorded mini-grid",
+   "unit": "km",
+   "evidence": "reported",
+   "publicUse": false,
+   "source": "Mini-grids",
+   "provider": "Nigeria SE4ALL platform (REA)",
+   "datasetDate": "Unknown (platform data, retrieved live)",
+   "retrievedAt": "2026-11-17T14:52:46.027Z",
+   "licence": "Not stated",
+   "method": "Planar distance (km) from the settlement's representative point to the nearest feature inside the three LGAs plus a 10 km buffer.",
+   "limitations": [
+    "Licence not stated: internal use only.",
+    "Operational status as reported; may be outdated."
+   ]
+  }
+ },
+ "summary": {
+  "ankpa": {
+   "name": "Ankpa",
+   "areaKm2": 1292.3,
+   "wards": 13,
+   "settlements": 403,
+   "settlementsByType": {
+    "Small Settlement Area": 110,
+    "Hamlet": 286,
+    "Built-up Area": 7
+   },
+   "namedSettlements": 142,
+   "multiNamedExtents": 8,
+   "buildings": 114618,
+   "populationLga": 380985,
+   "populationInSettlements": 326724,
+   "hreaKnown": 203,
+   "healthFacilities": 104,
+   "schools": 142,
+   "markets": 3,
+   "roadKm": 179.7,
+   "restricted": {
+    "mvLineKm": 101.4,
+    "hvLineKm": 0,
+    "substations": 0,
+    "minigrids": 0
+   }
+  },
+  "dekina": {
+   "name": "Dekina",
+   "areaKm2": 2453.4,
+   "wards": 12,
+   "settlements": 617,
+   "settlementsByType": {
+    "Hamlet": 397,
+    "Small Settlement Area": 214,
+    "Built-up Area": 6
+   },
+   "namedSettlements": 223,
+   "multiNamedExtents": 9,
+   "buildings": 143396,
+   "populationLga": 416694,
+   "populationInSettlements": 356939,
+   "hreaKnown": 380,
+   "healthFacilities": 194,
+   "schools": 187,
+   "markets": 1,
+   "roadKm": 434.5,
+   "restricted": {
+    "mvLineKm": 214.5,
+    "hvLineKm": 0,
+    "substations": 0,
+    "minigrids": 0
+   }
+  },
+  "adavi": {
+   "name": "Adavi",
+   "areaKm2": 610,
+   "wards": 11,
+   "settlements": 496,
+   "settlementsByType": {
+    "Built-up Area": 3,
+    "Hamlet": 455,
+    "Small Settlement Area": 38
+   },
+   "namedSettlements": 13,
+   "multiNamedExtents": 2,
+   "buildings": 61034,
+   "populationLga": 427552,
+   "populationInSettlements": 394216,
+   "hreaKnown": 151,
+   "healthFacilities": 69,
+   "schools": 79,
+   "markets": 1,
+   "roadKm": 83.9,
+   "restricted": {
+    "mvLineKm": 122.3,
+    "hvLineKm": 55,
+    "substations": 4,
+    "minigrids": 0
+   }
+  }
+ },
+ "stats": {
+  "pop": {
+   "n": 1516,
+   "min": 0,
+   "p25": 4,
+   "median": 12,
+   "p75": 80,
+   "max": 247606
+  },
+  "buildings": {
+   "n": 1516,
+   "min": 1,
+   "p25": 2,
+   "median": 8,
+   "p75": 45,
+   "max": 40330
+  },
+  "hrea": {
+   "n": 734,
+   "min": 0.016,
+   "p25": 0.074,
+   "median": 0.103,
+   "p75": 0.145,
+   "max": 0.983
+  },
+  "dHealth": {
+   "n": 1516,
+   "min": 0.03,
+   "p25": 0.81,
+   "median": 1.68,
+   "p75": 3.22,
+   "max": 8.98
+  },
+  "dSchool": {
+   "n": 1516,
+   "min": 0.01,
+   "p25": 0.74,
+   "median": 1.59,
+   "p75": 3,
+   "max": 8.64
+  },
+  "dMarket": {
+   "n": 1516,
+   "min": 0.1,
+   "p25": 8.83,
+   "median": 15.13,
+   "p75": 22.59,
+   "max": 36.06
+  },
+  "dRoad": {
+   "n": 1516,
+   "min": 0,
+   "p25": 0.3,
+   "median": 1.59,
+   "p75": 3.92,
+   "max": 13.36
+  },
+  "dMv": {
+   "n": 1516,
+   "min": 0,
+   "p25": 0.95,
+   "median": 3.15,
+   "p75": 5.73,
+   "max": 16.36
+  },
+  "dHv": {
+   "n": 1516,
+   "min": 0,
+   "p25": 12.66,
+   "median": 47.77,
+   "p75": 87.3,
+   "max": 124.07
+  },
+  "dSub": {
+   "n": 1516,
+   "min": 0.19,
+   "p25": 17.18,
+   "median": 61.49,
+   "p75": 102.01,
+   "max": 138.18
+  },
+  "dMg": null
+ },
+ "checks": [
+  {
+   "status": "WARN",
+   "title": "Ward boundaries (2026) vs LGA boundaries (2019)",
+   "detail": "Lowest mutual area overlap: 84.2 %. Wards whose interior point falls in a different LGA: Adavi-Eba."
+  },
+  {
+   "status": "PASS",
+   "title": "GRID3 v4.1 rows are blocks and are aggregated into settlements",
+   "detail": "21109 blocks in the download window form 5435 mgrs_code groups; 5319 (97.9 %) have exactly blocks_per_settl_extent blocks and one extent_type. 1516 settlements fall inside the three LGAs."
+  },
+  {
+   "status": "WARN",
+   "title": "Block-count mismatches inside the pilot LGAs",
+   "detail": "41 settlements (2.70 %) have a block count different from blocks_per_settl_extent. They are kept and flagged 'block_count_mismatch'."
+  },
+  {
+   "status": "PASS",
+   "title": "Aggregated settlements are contiguous",
+   "detail": "6 settlements (0.40 %) are multipart after merging their blocks (flag 'multipart')."
+  },
+  {
+   "status": "INFO",
+   "title": "Settlements crossing LGA boundaries (clipped at block level)",
+   "detail": "20 settlement parts come from GRID3 extents that straddle an LGA boundary (flag 'split_by_lga_boundary'). Each block is assigned to the LGA containing it; blocks outside the three LGAs are dropped, so cross-boundary towns (e.g. the Okene conurbation) only contribute the part inside the pilot LGAs."
+  },
+  {
+   "status": "WARN",
+   "title": "Settlement ward assignment",
+   "detail": "84 settlements fall outside every ward polygon (flag 'outside_ward_boundaries'); 0 fall in a ward whose LGA differs from the LGA polygon (flag 'ward_lga_conflict'). Caused by the 2019 LGA vs 2026 ward boundary mismatch."
+  },
+  {
+   "status": "INFO",
+   "title": "Settlement names",
+   "detail": "592 GRID3 named points lie inside the LGAs: 577 fall inside a settlement extent, 8 within 150 m of one, 7 match no extent (left unused). 378 settlements (24.9 %) received a single name; 19 large extents contain more than 3 named places and list them instead of taking one name; the rest are labelled 'Unnamed settlement'."
+  },
+  {
+   "status": "PASS",
+   "title": "Population captured by settlement extents",
+   "detail": "1,077,879 of 1,225,231 modelled residents (88.0 %) fall in settlement extents. 13 settlements (mostly small hamlets narrower than one 100 m cell) receive 0 because no cell centre falls inside them."
+  },
+  {
+   "status": "INFO",
+   "title": "HREA electrification likelihood coverage",
+   "detail": "734 settlements have an HREA value; 782 (51.6 %) fall outside HREA's settlement mask and are Unknown (not 0)."
+  },
+  {
+   "status": "INFO",
+   "title": "Distance indicators",
+   "detail": "Measured from each settlement's representative point to infrastructure inside the LGAs plus a 10 km buffer (edge-effect correction). Index sizes: health 849, school 998, market 19, road 2492, mv 506, hv 23, sub 11, mg 0."
+  },
+  {
+   "status": "PASS",
+   "title": "Sample data isolation",
+   "detail": "Pipeline scripts import app code (lib/, seed, store): no. Output settlements carrying a sample marker: 0. The map loads only /api/geo/* layers built from data/raw/."
+  }
+ ],
+ "notes": [],
+ "flags": {
+  "block_count_mismatch": "Number of blocks differs from GRID3's blocks_per_settl_extent.",
+  "split_by_lga_boundary": "The GRID3 extent straddles an LGA boundary; only the blocks inside this LGA are included.",
+  "outside_ward_boundaries": "Representative point is not inside any 2026 ward polygon.",
+  "ward_lga_conflict": "Containing ward belongs to a different LGA than the LGA polygon.",
+  "multipart": "Merged blocks form more than one polygon."
+ }
+}

@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# geospatial pipeline raw downloads (re-create with npm run data:fetch)
+/data/raw/
+
+# user accounts (password hashes) – managed with npm run users
+/data/auth/

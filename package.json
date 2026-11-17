@@ -6,17 +6,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "data:fetch": "node scripts/data/fetch.mjs",
+    "data:build": "node scripts/data/build.mjs",
+    "users": "node scripts/auth/users.mjs"
   },
   "dependencies": {
+    "maplibre-gl": "6.19.0",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",
+    "@turf/turf": "7.4.0",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "flatbush": "4.7.0",
+    "geotiff": "3.0.5",
     "tailwindcss": "4.3.3"
   }
 }
